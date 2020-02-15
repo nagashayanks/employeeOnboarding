@@ -1,0 +1,142 @@
+<div class="container register-container">
+    <div class="login-form">
+        <h3>Account Registration Form</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="signUp()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="customerName">Customer Name: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Customer Name *" id="customerName"
+                            formControlName="customerName" />
+                        <div class="error"
+                            *ngIf="submitted  && register.customerName.errors && register.customerName.errors.required ">
+                        Customer Name is <strong>required</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Mobile Number *" id="mobileNumber"
+                            formControlName="mobileNumber" />
+                        <div class="error"
+                            *ngIf="submitted  && register.mobileNumber.errors && register.mobileNumber.errors.required">
+                            Mobile number is <strong>required</strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Email *" id="email"
+                            formControlName="email" />
+                        <div class="error"
+                            *ngIf="submitted  && register.email.errors && register.email.errors.required">
+                            Email is <strong>required</strong>
+                        </div>
+                        <div class="error" *ngIf="submitted  && register.email.errors && register.email.errors.email">
+                            Email must be a valid email address</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <label for="dob">DOB: <strong class="asterisk">*</strong></label>
+                    </div>
+                    <p-calendar formControlName="dateOfBirth"  [monthNavigator]="true" [yearNavigator]="true"
+                        placeholder="DOB *" [showIcon]="true" dateFormat="yy/mm/dd" yearRange="1960:2019"
+                         (onSelect)="validateDOB($event)" inputId="dob">
+                    </p-calendar>
+                    <div class="error" *ngIf="submitted  && register.dateOfBirth.errors && register.dateOfBirth.errors.required ">
+                        DOB is <strong>required</strong>
+                    </div>
+                    <div class="error" *ngIf="dobErrorFlag"> {{errorMessage}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="salary">Salary: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Salary *" id="salary"
+                            formControlName="salary" />
+                        <div class="error"
+                            *ngIf="submitted  && register.salary.errors && register.salary.errors.required">
+                            Salary is <strong>required</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div>Gender: <strong class="asterisk">*</strong></div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="male" value="male"
+                                formControlName="gender">
+                            <label class="custom-control-label" for="male">Male</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="female" value="female"
+                                formControlName="gender">
+                            <label class="custom-control-label" for="female">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Your Password *"
+                            formControlName="password" />
+                        <div class="error"
+                            *ngIf="submitted  && register.password.errors  && register.password.errors.required">
+                            Password is <strong>required</strong>
+                        </div>
+                        <div class="error" *ngIf="register.password.errors  && register.password.errors.minlength ">
+                            Password should be 8 digits</div>
+                        <div class="error" *ngIf="register.password.errors  && register.password.errors.maxlength ">
+                            Password should be 8 digits</div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" class="form-control" placeholder="Confirm Password *"
+                            id="confirmPassword" formControlName="confirmPassword" />
+                        <div class="error"
+                            *ngIf="submitted  && register.confirmPassword.errors  && register.confirmPassword.errors.required">
+                            Confirm Password is <strong>required</strong>
+                        </div>
+                        <div class="error"
+                            *ngIf="register.confirmPassword.errors && register.confirmPassword.errors.mustMatch">
+                            Passwords must match</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding-bottom">
+                <div class="col-md-12">
+                    <label for="address">Address: <strong class="asterisk">*</strong></label>
+                    <textarea class="form-control" placeholder="Address *" id="address" formControlName="address"
+                        rows="2"></textarea>
+                    <div class="error"
+                        *ngIf="submitted  && register.address.errors && register.address.errors.required">
+                        Address is <strong>required</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button class="btn btnSubmit btn-submit">Sign Up</button>
+                        <a routerLink="/login" class="btn btnSubmit btn-submit">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <app-spinner [spinner]="spinner"></app-spinner> -->
+<app-alert [alertObj]="api.alertConfig" *ngIf="api.alertConfig?.modalShow" (buttonAction)="modalAction($event)">
+</app-alert>
