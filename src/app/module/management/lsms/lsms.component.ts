@@ -19,6 +19,7 @@ export class LsmsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getSchemadetails();
   }
 /**
  * method to fetch all schema details

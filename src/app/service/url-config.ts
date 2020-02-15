@@ -10,18 +10,19 @@ export class UrlConfig {
     /* url config with url Mock list */
     urlMock() {
         return this.url = {
-            userLogin: 'http://10.117.189.111:9090/housepital/' + 'doctors',
+            userLogin: 'http://10.117.189.55:9090/employeemanagement/' + 'employees/login',
             userRegister: this.apiMock + 'doctorList',
-            schemes:  this.apiMock + 'doctorList',
-
+            schemes:  this.apiMock + 'timesheets',
+            time: this.apiMock + 'timesheets',
         };
     }
     /* url config with url Server list */
     urlApi() {
         return this.url = {
-            userLogin: this.apiHost + 'doctors',
+            userLogin: this.apiHost + 'employees/login',
             userRegister: this.apiHost + 'employees',
-            schemes:  this.apiMock + 'doctorList',
+            schemes:  this.apiHost + 'timesheets',
+            time: this.apiHost + 'timesheets',
 
         };
     }

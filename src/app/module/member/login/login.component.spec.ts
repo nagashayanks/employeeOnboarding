@@ -85,7 +85,7 @@ describe('LoginComponent', () => {
   it('should check ngOnInit Valid User and form creation', () => {
     component.ngOnInit();
     component.loginForm = formBuilder.group({
-      mobile: ['', Validators.required],
+      employeeId: ['', Validators.required],
       password: ['', Validators.required]
     });
     expect(component.loginForm.valid).toBeFalsy();
@@ -99,7 +99,7 @@ describe('LoginComponent', () => {
       mobile: 1234
     };
 
-    component.loginForm.controls.mobile.setValue('1234');
+    component.loginForm.controls.employeeId.setValue('1234');
     component.loginForm.controls.password.setValue('123345678');
     component.onClickSubmit();
     component.submitted = true;

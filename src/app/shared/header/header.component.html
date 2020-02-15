@@ -17,7 +17,7 @@
         <a *ngIf="!userDetails?.userName"  routerLink="/doctor" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Doctors</a> -->
     </div>
       <div class="user-details icon" *ngIf="userDetails?.userName" [ngClass]="{'show toggle-class': toggleFlag}">
-        Welcome, <strong>{{userDetails?.userName}}</strong>
+        Welcome, <strong>{{userDetails?.userName}}</strong>, Employee ID: <strong>{{userDetails?.userId}}</strong>
         <i class="pi pi-sign-out" (click)="logout()"></i>
       </div>
     </div>
