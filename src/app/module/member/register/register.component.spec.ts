@@ -55,14 +55,12 @@ describe('RegisterComponent', () => {
     }
   };
   const postObject = {
-    customerName: 'Mani',
+    employeeName: 'Mani',
     email: 'test@test.com',
     gender: 'male',
-    mobileNumber: 12345677890,
+    experience: 12,
     dateOfBirth: new Date(),
-    salary: 10000,
-    address: 'test',
-    passwor: '12345678'
+    dateOfJoining: new Date()
   };
 
   // create new instance of FormBuilder
@@ -98,30 +96,24 @@ describe('RegisterComponent', () => {
   it('should check ngOnInit Valid User and form creation', () => {
     component.ngOnInit();
     component.registerForm = formBuilder.group({
-      customerName: ['', Validators.required],
+       employeeName: ['', Validators.required],
+      experience: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       dateOfBirth: ['', Validators.required],
-      gender: ['', Validators.required],
-      mobileNumber: ['', Validators.required],
-      address: ['', Validators.required],
-      salary: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
-      confirmPassword: ['', Validators.required]
+      dateOfJoining: ['', Validators.required],
+      gender: ['', Validators.required]
     });
     expect(component.registerForm.valid).toBeFalsy();
   });
 
   it('Should validate registeration on while click submit()', () => {
     component.submitted = true;
-    component.registerForm.controls.customerName.setValue('Mani');
+    component.registerForm.controls.employeeName.setValue('Mani');
     component.registerForm.controls.email.setValue('test@test.com');
     component.registerForm.controls.gender.setValue('male');
-    component.registerForm.controls.mobileNumber.setValue('12345677890');
+    component.registerForm.controls.experience.setValue('12');
     component.registerForm.controls.dateOfBirth.setValue(new Date());
-    component.registerForm.controls.address.setValue('test');
-    component.registerForm.controls.password.setValue('12345678');
-    component.registerForm.controls.confirmPassword.setValue('12345678');
-    component.registerForm.controls.salary.setValue(20000);
+    component.registerForm.controls.dateOfJoining.setValue(new Date());
     component.dobErrorFlag = false;
     component.signUp();
     expect(component.registerForm.valid).toBeTruthy();
@@ -141,7 +133,6 @@ describe('RegisterComponent', () => {
       const action = 'Yes';
       component.modalAction(action);
       expect(action).toEqual(action);
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/login']);
     });
 
     it('Should check modalAction No', () => {
@@ -162,7 +153,7 @@ describe('RegisterComponent', () => {
     component.dobErrorFlag = false;
     component.validateDOB(new Date());
     validationApi.checkFutureDate(new Date(), new Date());
-    expect(component.dobErrorFlag).toEqual(false);
+    expect(component.dobErrorFlag).toEqual(true);
   });
 
 });

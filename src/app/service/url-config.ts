@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 @Injectable()
 export class UrlConfig {
-    serverConfig = false;
+    serverConfig = true;
     // 'http://10.117.189.177:9090/housepital/
-    private apiHost = 'http://10.117.189.177:9090/housepital/';
+    private apiHost = 'http://10.117.189.55:9090/employeemanagement/';
     private apiMock = 'http://localhost:3000/';
     url = {};
 
@@ -20,7 +20,7 @@ export class UrlConfig {
     urlApi() {
         return this.url = {
             userLogin: this.apiHost + 'doctors',
-            userRegister: this.apiHost + 'doctors',
+            userRegister: this.apiHost + 'employees',
             schemes:  this.apiMock + 'doctorList',
 
         };

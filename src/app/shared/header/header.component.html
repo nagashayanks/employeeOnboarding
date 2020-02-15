@@ -10,8 +10,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse" [ngClass]="{'show toggle-height': toggleFlag}">
       <div class="navbar-nav" >
-          <a  *ngIf="userDetails?.userName"routerLink="/doctor/appoinment" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Add Appointment slots</a>
-          <a *ngIf="userDetails?.userName" routerLink="/doctor" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">View Appointment slots</a>
+          <a  *ngIf="userDetails?.userName"routerLink="/management/tsms" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">TSMS</a>
+          <a *ngIf="userDetails?.userName" routerLink="/management/lsms" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">LSMS</a>
       
         <!-- <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Patient</a>
         <a *ngIf="!userDetails?.userName"  routerLink="/doctor" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Doctors</a> -->

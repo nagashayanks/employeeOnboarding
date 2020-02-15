@@ -17,7 +17,9 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   spinner = false;
   dobErrorFlag =  false;
+  dojErrorFlag =  false;
   errorMessage: string;
+  errorMessage1: string;
   constructor(
     private fb: FormBuilder,
     public api: Service,
@@ -29,17 +31,12 @@ export class RegisterComponent implements OnInit {
   /* registeration form controls creation */
   private createForm() {
     this.registerForm = this.fb.group({
-      customerName: ['', Validators.required],
-      salary: ['', Validators.required],
+      employeeName: ['', Validators.required],
+      experience: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       dateOfBirth: ['', Validators.required],
+      dateOfJoining: ['', Validators.required],
       gender: ['male'],
-      mobileNumber: ['', Validators.required],
-      address: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8)]],
-      confirmPassword: ['', Validators.required],
-    }, {
-      validator: MustMatch('password', 'confirmPassword')
     });
   }
 
@@ -62,22 +59,35 @@ export class RegisterComponent implements OnInit {
       this.dobErrorFlag = true;
     }
   }
+  /* To validate valid date
+  @date input from user selected
+  */
+ public validateDOJ(date: Date) {
+  this.dojErrorFlag = false;
+  this.errorMessage1 = '';
+  if (this.validate.checkFutureDate(date, new Date())) {
+    this.dojErrorFlag = true;
+    this.errorMessage1 = 'DOJ should not be in the future date';
+  }
+}
   /* User registeration
   @param registerForm values
   */
   public signUp() {
     this.submitted = true;
     if (this.registerForm.valid) {
-      this.registerForm.value.mobileNumber = Number(this.registerForm.value.mobileNumber);
-      this.registerForm.value.salary = Number(this.registerForm.value.salary);
+      // this.registerForm.value.mobileNumber = Number(this.registerForm.value.mobileNumber);
+      // this.registerForm.value.salary = Number(this.registerForm.value.salary);
       this.registerForm.value.dateOfBirth = this.validate.convertDate(this.registerForm.value.dateOfBirth);
+      this.registerForm.value.dateOfJoining = this.validate.convertDate(this.registerForm.value.dateOfJoining);
+      this.registerForm.value.experience = Number(this.registerForm.value.experience);
       this.spinner = true;
       /* Api call*/
       this.api.postCall(this.url.urlConfig().userRegister, this.registerForm.value, 'post')
         .subscribe(user => {
           this.spinner = false;
           if (user.statusCode === 200) {
-            this.api.alertConfig = this.api.modalConfig('Success', user, true, [{ name: 'Yes' }, { name: 'No' }]);
+            this.api.alertConfig = this.api.modalConfig('Success', 'Registration Successfully', true, [{ name: 'Ok' }]);
           }
         },
         error => {
@@ -93,9 +103,10 @@ export class RegisterComponent implements OnInit {
   */
   public modalAction(action: string): void {
     if (action === 'Ok') {
-      this.api.alertConfigDefaultValue();
-    } else if (action === 'Yes') {
       this.router.navigate(['/login']);
+
+      this.api.alertConfigDefaultValue();
+    } else if (action === 'Ok') {
       this.api.alertConfigDefaultValue();
     } else {
       this.api.alertConfigDefaultValue();

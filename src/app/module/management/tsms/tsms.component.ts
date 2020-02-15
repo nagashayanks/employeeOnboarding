@@ -39,21 +39,13 @@ private generateGridColumn(): void {
       rowName: 'date',
     },
     {
-      colName: 'User Name',
+      colName: 'Hours',
       rowName: 'doctorName',
     },
     {
-      colName: 'Scheme Name',
+      colName: 'Status',
       rowName: 'rating',
     },
-    {
-      colName: 'Payment Mode',
-      rowName: 'specialization',
-    },
-    {
-      colName: 'Email Id',
-      rowName: 'consultationFees',
-    }
   ];
 }
 }
