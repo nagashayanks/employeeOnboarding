@@ -2,7 +2,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark header-bg ing-theme-color mb-4 fixed-top" >
 
-    <a class="navbar-brand" routerLink="/" alt="Logo" >Houspital</a>
+    <a class="navbar-brand" routerLink="/" alt="Logo" >Onboarding</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggle()">
@@ -13,8 +13,8 @@
           <a  *ngIf="userDetails?.userName"routerLink="/doctor/appoinment" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Add Appointment slots</a>
           <a *ngIf="userDetails?.userName" routerLink="/doctor" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">View Appointment slots</a>
       
-        <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Patient</a>
-        <a *ngIf="!userDetails?.userName"  routerLink="/doctor" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Doctors</a>
+        <!-- <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Patient</a>
+        <a *ngIf="!userDetails?.userName"  routerLink="/doctor" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Doctors</a> -->
     </div>
       <div class="user-details icon" *ngIf="userDetails?.userName" [ngClass]="{'show toggle-class': toggleFlag}">
         Welcome, <strong>{{userDetails?.userName}}</strong>
