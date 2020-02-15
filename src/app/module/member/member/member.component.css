@@ -1,0 +1,8 @@
+.login-container{
+    margin-top: 20%;
+    margin-bottom: 7%;
+    min-height: 390px;
+}
+.login-form img {
+    cursor: pointer;
+}

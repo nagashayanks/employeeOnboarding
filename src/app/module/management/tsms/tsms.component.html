@@ -1,0 +1,23 @@
+<div class="container mt">
+    <h3 style="color: orange;">TSMS</h3>
+    <div class=" col-md-12 row mb-5">
+        <div class="col-md-4">
+            <form name="loginForm" (ngSubmit)="onClickSubmit()">
+                <label for="hours">Enter Hours: <strong class="asterisk">*</strong></label>
+                <input type="text" class="form-control" placeholder="Hours *" id="hours" name="hours"
+                    [(ngModel)]="hours" required   numbersOnly  maxlength="2">
+            </form>
+        </div>
+        <div class="col-md-4">
+            <button class="btnSubmit" style="margin-top: 2rem;" aria-label="SignIn">Submit</button>
+        </div>
+       
+    </div>
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="tsmsList?.length">
+        <app-grid [gridData]="tsmsList" [gridColumnDefinition]="gridColumns"
+        (getAction)="getAction($event)" [sorting]="sorting" [pageLinks]="pageLinks" [pagination]="pagination"
+        *ngIf="tsmsList?.length">
+    </app-grid>
+        </div>
+
+</div>

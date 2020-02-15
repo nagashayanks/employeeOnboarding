@@ -1,0 +1,104 @@
+<div class="container register-container">
+    <div class="login-form">
+        <h3>Employee Registration Form</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="signUp()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="employeeName">Customer Name: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Customer Name *" id="employeeName"
+                            formControlName="employeeName" />
+                        <div class="error"
+                            *ngIf="submitted  && register.employeeName.errors && register.employeeName.errors.required ">
+                        Employee Name is <strong>required</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Email *" id="email"
+                            formControlName="email" />
+                        <div class="error"
+                            *ngIf="submitted  && register.email.errors && register.email.errors.required">
+                            Email is <strong>required</strong>
+                        </div>
+                        <div class="error" *ngIf="submitted  && register.email.errors && register.email.errors.email">
+                            Email must be a valid email address</div>
+                    </div>
+                </div>
+
+            </div>
+           
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="experience">Experience: <strong class="asterisk">*</strong></label>
+                        <input type="text" class="form-control" placeholder="Experience *" id="experience"
+                        numbersOnly maxlength="2"   formControlName="experience" />
+                        <div class="error"
+                            *ngIf="submitted  && register.experience.errors && register.experience.errors.required">
+                            Experience is <strong>required</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div>Gender: <strong class="asterisk">*</strong></div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="male" value="male"
+                                formControlName="gender">
+                            <label class="custom-control-label" for="male">Male</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="female" value="female"
+                                formControlName="gender">
+                            <label class="custom-control-label" for="female">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div>
+                        <label for="dob">DOB: <strong class="asterisk">*</strong></label>
+                    </div>
+                    <p-calendar formControlName="dateOfBirth"  [monthNavigator]="true" [yearNavigator]="true"
+                        placeholder="DOB *" [showIcon]="true" dateFormat="yy/mm/dd" yearRange="1960:2019"
+                         (onSelect)="validateDOB($event)" inputId="dob">
+                    </p-calendar>
+                    <div class="error" *ngIf="submitted  && register.dateOfBirth.errors && register.dateOfBirth.errors.required ">
+                        DOB is <strong>required</strong>
+                    </div>
+                    <div class="error" *ngIf="dobErrorFlag"> {{errorMessage}}</div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <label for="dob">DOJ: <strong class="asterisk">*</strong></label>
+                    </div>
+                    <p-calendar formControlName="dateOfJoining"  [monthNavigator]="true" [yearNavigator]="true"
+                        placeholder="DOJ *" [showIcon]="true" dateFormat="yy/mm/dd" yearRange="1960:2019"
+                         (onSelect)="validateDOJ($event)" inputId="dob">
+                    </p-calendar>
+                    <div class="error" *ngIf="submitted  && register.dateOfJoining.errors && register.dateOfJoining.errors.required ">
+                        DOJ is <strong>required</strong>
+                    </div>
+                    <div class="error" *ngIf="dojErrorFlag"> {{errorMessage1}}</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <button class="btn btnSubmit btn-submit">Sign Up</button>
+                        <a routerLink="/login" class="btn btnSubmit btn-submit">Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <app-spinner [spinner]="spinner"></app-spinner> -->
+<app-alert [alertObj]="api.alertConfig" *ngIf="api.alertConfig?.modalShow" (buttonAction)="modalAction($event)">
+</app-alert>

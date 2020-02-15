@@ -26,5 +26,16 @@ export class CustomValidation {
         const day = ('0' + date.getDate()).slice(-2);
         return [date.getFullYear().toString(), month, day].join('-');
     }
+/* calculate age */
+public calculateAge(dateString: Date) {
+    const today = new Date();
+    const birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const month = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
 
 }
