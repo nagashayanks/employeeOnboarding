@@ -7,8 +7,8 @@ export interface CurrentUser {
 export interface DoctorSummary {
     doctorName: string;
     rating: number;
-   specialization: string;
-   consultationFees: number;
+    specialization: string;
+    consultationFees: number;
 }
 export interface BookedslotAppointments {
 
@@ -20,5 +20,11 @@ export interface BookedslotAppointments {
     email: string;
     mobile: number;
 
- }
+}
+export interface SchemaSummary {
+    doctorName: string;
+    rating: number;
+    specialization: string;
+    consultationFees: number;
+}
 
