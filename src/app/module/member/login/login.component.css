@@ -1,0 +1,16 @@
+.login-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+
+
+.login-form{
+  transform: translateY(10%) translateX(75%) !important;
+}
+
+.vh{
+  margin-bottom: 7.5%;
+}
