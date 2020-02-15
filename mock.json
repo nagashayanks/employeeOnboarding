@@ -1,16 +1,14 @@
 {
     "doctorList": [
         {
-            "doctorName":"ram",
-            "rating":4,
-           "specialization":"orthopedic",
-           "consultationFees":500
+            "hours": 9,
+            "status": "successfull",
+           "data": "12-4-2020"
             },
          {
-            "doctorName":"ram",
-            "rating":5,
-           "specialization":"neuroSerjon",
-           "consultationFees":800
+            "hours": 9,
+            "status": "successfull",
+           "data": "12-4-2020"
             }
     ],
     "bookedAppointmentsDoctor": [
@@ -39,3 +37,4 @@
 
     }]
 }
+ 

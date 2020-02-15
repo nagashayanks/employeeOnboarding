@@ -2,14 +2,14 @@
     <h3 style="color: orange;">TSMS</h3>
     <div class=" col-md-12 row mb-5">
         <div class="col-md-4">
-            <form name="loginForm" (ngSubmit)="onClickSubmit()">
+            <form name="loginForm">
                 <label for="hours">Enter Hours: <strong class="asterisk">*</strong></label>
                 <input type="text" class="form-control" placeholder="Hours *" id="hours" name="hours"
                     [(ngModel)]="hours" required   numbersOnly  maxlength="2">
             </form>
         </div>
         <div class="col-md-4">
-            <button class="btnSubmit" style="margin-top: 2rem;" aria-label="SignIn">Submit</button>
+            <button class="btnSubmit" style="margin-top: 2rem;" aria-label="SignIn" (click)="submit()">Submit</button>
         </div>
        
     </div>

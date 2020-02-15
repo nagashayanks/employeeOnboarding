@@ -1,6 +1,6 @@
 <div class="container mt">
     <h3 style="color: orange;">LSMS</h3>
-    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="lsmsList?.length">
+    <div class="ui-grid ui-grid-responsive ui-fluid" >
         <app-grid [gridData]="lsmsList" [gridColumnDefinition]="gridColumns"
         (getAction)="getAction($event)" [sorting]="sorting" [pageLinks]="pageLinks" [pagination]="pagination"
         *ngIf="tsmsList?.length">
