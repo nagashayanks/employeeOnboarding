@@ -5,7 +5,7 @@ import { Service } from 'src/app/service/service';
 import { UrlConfig } from 'src/app/service/url-config';
 import { MemberComponent } from './member.component';
 import { of } from 'rxjs';
-import { MessageService } from 'src/app/service/message-service';
+import { NotificationService } from 'src/app/service/notification-service';
 
 describe('MemberComponent', () => {
   let component: MemberComponent;
@@ -53,7 +53,7 @@ describe('MemberComponent', () => {
       providers: [
         { provide: Router, useValue: mockRouter },
         { provide: Service, useValue: MockUserService }, UrlConfig,
-        MessageService]
+        NotificationService]
     })
     .compileComponents();
     mockRouter = TestBed.get(Router);

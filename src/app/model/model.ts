@@ -21,3 +21,4 @@ export interface BookedslotAppointments {
     mobile: number;
 
  }
+

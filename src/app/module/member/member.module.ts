@@ -10,8 +10,8 @@ import { SharedModuleModule } from '../../shared/shared-module.module';
 
 @NgModule({
   declarations: [
-    LoginComponent, 
-    RegisterComponent, 
+    LoginComponent,
+    RegisterComponent,
     MemberComponent],
   imports: [
     CommonModule,

@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-
 import { Service } from 'src/app/service/service';
 import { UrlConfig } from 'src/app/service/url-config';
-import { MustMatch } from 'src/app/helper/must-match';
+import { MustMatch } from 'src/app/helper/must-watch';
 import { CustomValidation } from 'src/app/helper/validation';
-import { DropdownOption } from 'src/app/model/model';
 
 
 @Component({
@@ -19,7 +16,6 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   spinner = false;
-  documentTypes: DropdownOption[];
   dobErrorFlag =  false;
   errorMessage: string;
   constructor(
@@ -121,11 +117,6 @@ export class RegisterComponent implements OnInit {
     /* Call the form creation while on component initiation */
     this.createForm();
     /*preparing document Type */
-    this.documentTypes = [
-      { name: 'Adhaar Card', value: 'adhaar' },
-      { name: 'Voter ID', value: 'voterID' },
-      { name: 'Pan Card', value: 'pan' }
-    ];
   }
 
 }
