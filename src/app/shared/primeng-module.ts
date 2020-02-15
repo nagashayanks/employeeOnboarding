@@ -8,7 +8,7 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
-import {ChartModule} from 'primeng/chart';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -20,11 +20,10 @@ import {ChartModule} from 'primeng/chart';
     ButtonModule,
     CarouselModule,
     InputTextModule,
-    ToastModule,
-    ChartModule
+    ToastModule
   ],
   providers: [],
   exports: [ CardModule, CalendarModule, DropdownModule, TableModule, CarouselModule, RadioButtonModule,
-     ButtonModule, InputTextModule, ToastModule, ChartModule ]
+     ButtonModule, InputTextModule, ToastModule ]
 })
 export class PrimeModule { }

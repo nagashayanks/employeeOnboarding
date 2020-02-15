@@ -28,7 +28,7 @@
     height: 165px;
 }
 .toggle-height{
-    height: 165px;
+    height: 165px;  
 }
 .toggle-height{
     min-height: 60px;
@@ -39,18 +39,4 @@
     position: relative;
     top: 8px;
     left: 5px;
-}
-.headertext{
-  color:#fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-.customNav{
-  margin: 0;
-  border: 0;
-}
-.headernav li a{
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
 }

@@ -1,103 +1,41 @@
 {
-    "viewAllDonation": [
+    "doctorList": [
         {
-            "schemeId":1,
-            "schemeName":"HUNGER AND POVERTY",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.",
-            "amount": 50000,
-            "taxBenefitAmount": 4000,
-            "taxBenefitDescription": "test",
-            "imageUrl": ""
-        },
-        {
-            "schemeId":1,
-            "schemeName":"HUNGER AND POVERTY",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.",
-            "amount": 50000,
-            "taxBenefitAmount": 4000,
-            "taxBenefitDescription": "test",
-            "imageUrl": ""
-        },
-        {
-            "schemeId":1,
-            "schemeName":"HUNGER AND POVERTY",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.",
-            "amount": 50000,
-            "taxBenefitAmount": 4000,
-            "taxBenefitDescription": "test",
-            "imageUrl": ""
-        },
-        {
-            "schemeId":1,
-            "schemeName":"HUNGER AND POVERTY",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.",
-            "amount": 50000,
-            "taxBenefitAmount": 4000,
-            "taxBenefitDescription": "test",
-            "imageUrl": ""
-        },
-        {
-            "schemeId":1,
-            "schemeName":"HUNGER AND POVERTY",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.",
-            "amount": 50000,
-            "taxBenefitAmount": 4000,
-            "taxBenefitDescription": "test",
-            "imageUrl": ""
-        },
-        {
-            "schemeId":1,
-            "schemeName":"HUNGER AND POVERTY",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.",
-            "amount": 50000,
-            "taxBenefitAmount": 4000,
-            "taxBenefitDescription": "test",
-            "imageUrl": ""
-        }
+            "doctorName":"ram",
+            "rating":4,
+           "specialization":"orthopedic",
+           "consultationFees":500
+            },
+         {
+            "doctorName":"ram",
+            "rating":5,
+           "specialization":"neuroSerjon",
+           "consultationFees":800
+            }
     ],
-    "schemaList": [
-        {
-            "schemeName": "djhfj",
-            "description": "dfbsddfddvzsaddxjkfn",
-            "amount": 5478,
-            "taxBenefitPercentage": 9,
-            "taxBenefitDescription": "jhdbsjhdjshjdbs"
-        },
-        {
-            "schemeName": "djh",
-            "description": "dfsdjhfgshgfdb",
-            "amount": 7478,
-            "taxBenefitPercentage": 5,
-            "taxBenefitDescription": "jhdbsjhdjshjdbs"
-        }
-    ],
-    "piechart": [
-        {
-        "schemeId": 1,
-        "name": "poverty",
-        "y": 70
-        },
-        {
-        "schemeId": 2,
-        "name": "jksdfhsd",
-        "y": 30
-        }
-        ],
-
-    "Donationdata": [
+    "bookedAppointmentsDoctor": [
       {
-        "name": "string",
-        "panNumber": "string",
-        "mobile": 23525334,
-        "email": "t@gmail.com",
-        "paymentMode": "PAYTM",
-        "date": "22-02-2020",
-        "schemeName": "string",
-        "description": "string",
-        "amount": 50000,
-        "taxBenefitAmount": 4000,
-        "taxBenefitDescription":"tax saver"
-      }
-    ]
-}
 
+
+          "hospitalName":"Manipal",
+          "date":"12-4-2020",
+          "slotTime":"13:00",
+          "patientId":123,
+          "patientName":"Tanmoy",
+          "email":"t@gmail.com",
+          "mobile":9089567800
+
+      },
+      {
+
+
+        "hospitalName":"Aster",
+        "date":"13-4-2020",
+        "slotTime":"15:00",
+        "patientId":12453,
+        "patientName":"krishna",
+        "email":"k@gmail.com",
+        "mobile":9089784590
+
+    }]
+}

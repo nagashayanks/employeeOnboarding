@@ -26,7 +26,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.userDetails = userData;
       } else {
         this.userDetails = {
-          userId: null
+          userId: null,
+          userName: null,
 
         };
       }
@@ -42,14 +43,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public logout(): void {
     sessionStorage.clear();
     this.notification.clearMessages();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
-/* logout */
-public login(): void {
-  sessionStorage.clear();
-  this.notification.clearMessages();
-  this.router.navigate(['/login']);
-}
+
   ngOnInit() {
     /*Get logged user */
     this.getLoginUser();

@@ -43,7 +43,7 @@ body {
     background: transparent;
 }
 .login-form h3, .inner-container h3 {
-    color: #6363de;
+    color: #ff6200;
     text-align: left;
     padding: 0 10%;
 }
@@ -63,7 +63,7 @@ body {
 .login-form .btnSubmit, .inner-container .btnSubmit{
     font-weight: 600;
     color: #fff;
-    background-color: #6363de;
+    background-color: #ff6200;
     float: right;
 }
 .login-form .ForgetPwd {
